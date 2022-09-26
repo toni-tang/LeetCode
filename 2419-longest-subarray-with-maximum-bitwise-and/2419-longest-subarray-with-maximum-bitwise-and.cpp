@@ -12,16 +12,20 @@ public:
         
         for(int i = 0; i < nums.size(); i++)
         {
-            if(nums[i] == maxAND)
+            if(maxAND == nums[i])
             {
                 count++;
-                cout << nums[i] << endl;
+                res = max(res,count);
+            }
+            else if(nums[i] > maxAND)
+            {
+                res = 1;
+                count = 1;
             } 
             else
             {
-                count = 0;  
-            } 
-            res = max(res,count);
+                count = 0;
+            }
         }
         
         return res;
