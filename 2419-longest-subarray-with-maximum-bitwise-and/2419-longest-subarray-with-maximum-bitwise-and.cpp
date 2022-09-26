@@ -5,11 +5,6 @@ public:
         int res = 0;
         int count = 0;
         
-        for(auto& n : nums)
-        {
-            maxAND = max(maxAND, n);
-        }
-        
         for(int i = 0; i < nums.size(); i++)
         {
             if(maxAND == nums[i])
@@ -19,6 +14,7 @@ public:
             }
             else if(nums[i] > maxAND)
             {
+                maxAND = nums[i];
                 res = 1;
                 count = 1;
             } 
