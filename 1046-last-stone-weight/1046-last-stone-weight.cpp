@@ -9,10 +9,7 @@ public:
             y = pq.top(); pq.pop();
             x = pq.top(); pq.pop();
 
-            if(y > x)
-            {
-                pq.push(y-x);
-            }      
+            if(y > x) pq.push(y-x);    
         }
         
         return pq.size() == 1 ? pq.top() : 0;
