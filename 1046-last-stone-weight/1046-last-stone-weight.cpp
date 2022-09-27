@@ -2,7 +2,7 @@ class Solution {
 public:
     int lastStoneWeight(vector<int>& stones) {
         priority_queue<int> pq;
-        int y = 0, x = 0, res = 0;
+        int y = 0, x = 0;
         
         if(stones.size() == 1) return stones[0];
         
@@ -23,14 +23,11 @@ public:
                 
                 if(y > x)
                 {
-                    res = y-x;
                     pq.push(y-x);
                 }   
             }
-            if(pq.size() == 1) return pq.top();
-            if(pq.size() == 0) return 0;
         }
         
-        return res;
+        return pq.size() == 1 ? pq.top() : 0;
     }
 };
