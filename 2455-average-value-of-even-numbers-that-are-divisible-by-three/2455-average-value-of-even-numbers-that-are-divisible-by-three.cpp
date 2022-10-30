@@ -7,15 +7,13 @@ public:
         
         for(int &x : nums)
         {
-            if(x%3 == 0 && x%2 == 0) 
+            if(x%6 == 0) 
             {
                 sum += x;
                 count++;
             }
         }
-        
-        if(sum == 0 || count == 0) return 0;
-        
-        return sum/count;
+                
+        return count > 0 ? sum/count : 0;
     }
 };
