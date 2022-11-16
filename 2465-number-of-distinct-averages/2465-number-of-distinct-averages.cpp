@@ -7,7 +7,7 @@ public:
         sort(nums.begin(), nums.end());
         while(L < R)
         {
-            float avg = ((float)nums[L++] + (float)nums[R--])/2;
+            float avg = ((float)nums[L++] + (float)nums[R--]);
             s.insert(avg);
         }
         
