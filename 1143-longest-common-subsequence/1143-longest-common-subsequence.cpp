@@ -5,9 +5,9 @@ public:
         int m = text2.length()+1;
         vector<vector<int>> res( n , vector<int> (m)); 
          
-        for(int r = 1; r < text1.length() + 1; r++)
+        for(int r = 1; r < n; r++)
         {
-           for(int c = 1; c < text2.length() + 1; c++)
+           for(int c = 1; c < m; c++)
            {
                 if(text1[r-1] == text2[c-1])
                 {
