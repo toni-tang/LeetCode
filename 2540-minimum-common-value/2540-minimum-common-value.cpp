@@ -5,17 +5,17 @@ public:
         
         while(p1 < nums1.size() && p2 < nums2.size())
         {
-            if(nums1[p1] == nums2[p2])
-            {
-                return nums1[p1];
-            }
-            else if(nums1[p1] < nums2[p2])
+            if(nums1[p1] < nums2[p2])
             {
                 p1++;
             }
-            else
+            else if(nums1[p1] > nums2[p2])
             {
                 p2++;
+            }
+            else
+            {
+                return nums1[p1];
             }
         }
         
