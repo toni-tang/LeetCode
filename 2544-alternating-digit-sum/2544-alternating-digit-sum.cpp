@@ -14,7 +14,6 @@ public:
         places = (places % 2 == 0) ? -1 : 1; 
     
         while(n) {
-            cout << ((n % 10) * places) << endl;
             sum = sum + ((n % 10) * places);
             places = (places == 1) ? -1 : 1;
             n /= 10;
