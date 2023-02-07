@@ -15,15 +15,12 @@ public:
         
         for(int i = 0; i < k; i++)
         {
-            double root = q.top();
-            q.pop();
-            q.push(floor(sqrt(root))); 
+            q.push(sqrt(q.top())); q.pop();
         }
         
         while(!q.empty())
         {
-            res += q.top();
-            q.pop();
+            res += q.top(); q.pop();
         }
         
         return res;
