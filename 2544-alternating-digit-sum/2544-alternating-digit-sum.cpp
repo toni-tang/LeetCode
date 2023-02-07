@@ -1,8 +1,8 @@
 class Solution {
 public:
     int alternateDigitSum(int n) {
-        int sum = 0;
         int copy = n;
+        int sum = 0;
         int places = 0;
        
         while(copy)
