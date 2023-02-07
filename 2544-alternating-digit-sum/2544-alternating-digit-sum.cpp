@@ -11,12 +11,7 @@ public:
             places++;
         }   
         
-        cout << places << endl;
-        
-        if(places != 1)
-        {
-            places = (places % 2 == 0) ? -1 : 1; 
-        }
+        places = (places % 2 == 0) ? -1 : 1; 
     
         while(n) {
             cout << ((n % 10) * places) << endl;
