@@ -28,7 +28,7 @@ public:
         
         return res;
         
-        // R : Looks good
+        // R : Wasn't flooring the numbers
         // E : t (n log n) s (n)
     }
 };
