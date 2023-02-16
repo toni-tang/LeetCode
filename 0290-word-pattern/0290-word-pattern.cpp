@@ -21,6 +21,6 @@ public:
         
         if((ss >> word)) return false;
         
-        return true;
+        return (ss >> word) ? false : true;
     }
 };
