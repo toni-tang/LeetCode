@@ -21,12 +21,13 @@ public:
             if(mp.at(pattern[i]) != word) return false;
         }
         
-        while(ss >> word)
-        {
-            count++;
-        }
+        if((ss >> word)) return false;
+//         while(ss >> word)
+//         {
+//             count++;
+//         }
         
-        if(count != pattern.length()) return false;
+//         if(count != pattern.length()) return false;
         
         return true;
     }
