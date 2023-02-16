@@ -1,8 +1,8 @@
 class Solution {
 public:
     vector<int> addToArrayForm(vector<int>& num, int k) {
-        vector<int> res;
         int carry = 0;
+        vector<int> res;
         
         for(int i = num.size()-1; i >= 0; i--) {
             int temp = k%10 + num[i] + carry;
