@@ -3,7 +3,7 @@ public:
     bool wordPattern(string pattern, string s) {
         unordered_map<char, string> mp;
         unordered_map<string, int> mp2;
-        stringstream ss(s);
+        istringstream ss(s);
         string word;
         
         for(int i = 0; i < pattern.length(); i++) {
