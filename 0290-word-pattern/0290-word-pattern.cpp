@@ -19,8 +19,6 @@ public:
             if(mp.at(pattern[i]) != word) return false;
         }
         
-        if((ss >> word)) return false;
-        
         return (ss >> word) ? false : true;
     }
 };
