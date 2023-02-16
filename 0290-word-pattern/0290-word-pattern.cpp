@@ -15,8 +15,7 @@ public:
                 mp2[word]++;
             }
             
-            if(mp2[word] > 1) return false;
-            if(mp.at(pattern[i]) != word) return false;
+            if(mp2[word] > 1 || mp.at(pattern[i]) != word) return false;
         }
         
         return (ss >> word) ? false : true;
