@@ -11,9 +11,6 @@ public:
             carry = temp / 10;
         }
         
-        cout << carry << endl;
-        cout << k%10 << endl;
-        
         while(k)
         {
             int temp = k%10 + carry;
