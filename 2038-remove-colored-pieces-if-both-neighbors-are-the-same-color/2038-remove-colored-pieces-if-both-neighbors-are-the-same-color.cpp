@@ -38,6 +38,6 @@ public:
             bMax += B - 2;
         }
         
-        return aMax > bMax ? true : false;
+        return aMax > bMax;
     }
 };
