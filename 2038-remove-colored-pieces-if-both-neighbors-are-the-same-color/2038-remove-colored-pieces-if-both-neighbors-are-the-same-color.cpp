@@ -48,8 +48,6 @@ public:
             bMax += B - 2;
         }
         
-        cout << aMax << " " << bMax;
-        
         return aMax > bMax ? true : false;
     }
 };
