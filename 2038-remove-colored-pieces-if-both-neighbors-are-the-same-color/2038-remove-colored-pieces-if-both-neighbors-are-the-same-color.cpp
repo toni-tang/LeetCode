@@ -11,30 +11,20 @@ public:
             if(colors[i] == 'A')
             {
                 A++;
-            }
-            else
-            {
-                if(A >= 3)
-                {
-                    aMax += A - 2;
-                }
-                A = 0;
-            }
-        }
-        
-        for(int i = 0; i < colors.length(); i++)
-        {
-            if(colors[i] == 'B')
-            {
-                B++;
-            }
-            else
-            {
                 if(B >= 3)
                 {
                     bMax += B - 2;
                 }
                 B = 0;
+            }
+            else
+            {
+                B++;
+                if(A >= 3)
+                {
+                    aMax += A - 2;
+                }
+                A = 0;
             }
         }
         
