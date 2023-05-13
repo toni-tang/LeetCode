@@ -1,20 +1,13 @@
 class Solution {
 public:
     int lengthOfLastWord(string s) {
-        int res = 0;
-        bool word = 0;
-        for(int i = s.length()-1; i >= 0; i--)
-        {
-            if(s[i] == ' ' && res != 0)
-            {
-                word = 1;
-            }
-            else if(s[i] != ' ' && word == 0)
-            {
-                res++;
-            }
-        }
+        int n = s.length();
         
-        return res;
+        int ptr = n-1;
+        while(ptr >= 0 && s[ptr] == ' ') ptr--; /* Skip the trailing whitespaces */
+        
+        int len = 0;
+        while(ptr >= 0 && s[ptr--] != ' ') len++; /* Counting the letters in the last word */
+        return len;
     }
 };
