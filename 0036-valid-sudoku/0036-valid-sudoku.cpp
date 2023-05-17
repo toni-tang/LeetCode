@@ -12,8 +12,7 @@ public:
             {
                 if(board[r][c] != '.')
                 {
-                    
-                    int idx = board[r][c] - '0' - 1; // Converts char to int;
+                    int idx = board[r][c] - '0' - 1;
                     int area = r/3 * 3 + c/3;
                     
                     if(row[r][idx] || col[c][idx] || sub[area][idx]) return false;
