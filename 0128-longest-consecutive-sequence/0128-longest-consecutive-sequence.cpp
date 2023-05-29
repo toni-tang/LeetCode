@@ -3,13 +3,13 @@ public:
     int longestConsecutive(vector<int>& nums) {
         unordered_map<int, int> mp;
         int res = 0;
+        int i;
         
         for(auto n : nums)
         {
             mp[n]++;
         }
         
-        int i;
         for(auto n : nums) 
         {
             if(mp.find(n-1) == mp.end())
