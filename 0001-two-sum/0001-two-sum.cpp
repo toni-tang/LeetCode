@@ -9,7 +9,7 @@ public:
     
             if(mp.find(res) != mp.end())
             {
-                return {mp[res], i};
+                return { mp[res], i };
             }
             
             mp[nums[i]] = i;
