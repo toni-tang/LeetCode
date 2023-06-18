@@ -31,10 +31,7 @@ public:
                     L = mid + 1;
                 }
             }
-           
         }
-            
-            
             
         return res;
     }
