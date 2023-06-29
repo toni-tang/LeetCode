@@ -1,12 +1,7 @@
 class Solution {
 public:
     int findLeastNumOfUniqueInts(vector<int>& arr, int k) {
-        auto compare = [](const pair<int, int>& p1, const pair<int, int>& p2) 
-        {
-            return p1.second > p2.second;
-        };
-        
-        priority_queue<pair<int, int>, vector<pair<int, int>>, decltype(compare)> pq(compare);
+        priority_queue<int, vector<int>, greater<int>> pq;
         unordered_map<int, int> mp;
         
         for(auto n : arr) 
@@ -16,19 +11,14 @@ public:
         
         for(auto it : mp) 
         {
-            pq.push(it);   
+            pq.push(it.second);   
         }
         
-        while (!pq.empty()) {
-            pair<int, int> pair = pq.top(); 
-            if(pair.second <= k)
+        while (!pq.empty() && k > 0) {
+            k -= pq.top();
+            if(k >= 0)
             {
-                k -= pair.second;
                 pq.pop();
-            }
-            else
-            {
-                break;
             }
         }
         
