@@ -9,6 +9,6 @@ public:
             res = min(sum, res);
         }
         
-        return res < 0 ? (-res) + 1 : 1;
+        return (-res) + 1;
     }
 };
