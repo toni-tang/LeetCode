@@ -4,7 +4,6 @@ public:
         stack<pair<int, int>> stk;
         vector<int> res(temp.size());
         
-        int count = 0;
         for(int i = 0; i < temp.size(); i++) {
             while(!stk.empty() && temp[i] > stk.top().first) {
                 res[stk.top().second] = i - stk.top().second;
