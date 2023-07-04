@@ -29,7 +29,6 @@ public:
                 if(node->left) q.push(node->left);
                 if(node->right) q.push(node->right);
                 
-                cout << prev << " " << node->val << endl;
                 if(i > 0) 
                 {
                     if(levels % 2 == 0 && (prev >= node->val || node->val % 2 == 0 ) || levels % 2 == 1 && ( prev <= node->val || node->val % 2 == 1)) 
