@@ -21,7 +21,7 @@ public:
         while(!q.empty()) 
         {
             int n = q.size();
-            int prev = 0;
+            int prev = levels % 2 == 0 ? 0 : INT_MAX;
             for(int i = 0; i < n; i++) 
             {
                 TreeNode* node = q.front(); q.pop();
@@ -29,23 +29,15 @@ public:
                 if(node->left) q.push(node->left);
                 if(node->right) q.push(node->right);
                 
-                if(i > 0) 
+                if(levels % 2 == 0 && (prev >= node->val || node->val % 2 == 0 ) || levels % 2 == 1 && ( prev <= node->val || node->val % 2 == 1)) 
                 {
-                    if(levels % 2 == 0 && (prev >= node->val || node->val % 2 == 0 ) || levels % 2 == 1 && ( prev <= node->val || node->val % 2 == 1)) 
-                    {
-                        return false;
-                    }
-                    else 
-                    {
-                         prev = node->val;
-                    }
+                    return false;
                 }
-                else 
-                {
-                    if(node->val % 2 == 0 && levels % 2 == 0 || node->val % 2 == 1 && levels % 2 == 1) return false;
-                    prev = node->val;
-                }
+
+                prev = node->val;
+            
             }
+            
             levels++;
         }
         
