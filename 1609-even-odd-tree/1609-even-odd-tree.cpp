@@ -22,12 +22,10 @@ public:
         {
             int n = q.size();
             int prev = levels % 2 == 0 ? 0 : INT_MAX;
+            
             for(int i = 0; i < n; i++) 
             {
                 TreeNode* node = q.front(); q.pop();
-                
-                if(node->left) q.push(node->left);
-                if(node->right) q.push(node->right);
                 
                 if(levels % 2 == 0 && (prev >= node->val || node->val % 2 == 0 ) || levels % 2 == 1 && ( prev <= node->val || node->val % 2 == 1)) 
                 {
@@ -35,7 +33,8 @@ public:
                 }
 
                 prev = node->val;
-            
+                if(node->left) q.push(node->left);
+                if(node->right) q.push(node->right);
             }
             
             levels++;
