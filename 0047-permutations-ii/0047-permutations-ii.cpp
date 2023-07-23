@@ -2,10 +2,8 @@ class Solution {
 public:
     vector<vector<int>> permuteUnique(vector<int>& nums) {
         vector<vector<int>> res;
-        
         sort(nums.begin(), nums.end());
         backtrack(res, nums, 0);
-        
         return res;
     }
 
