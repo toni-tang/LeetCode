@@ -18,11 +18,12 @@ public:
     }
 private:
     void dfs(TreeNode* node, TreeNode* prev, int& count) {
-        if(node && prev && node->val >= prev->val) {
+        if(!node) return;
+        if(node->val >= prev->val) {
             prev = node;
             count++;
         }
-        if(node->left) dfs(node->left, prev, count);
-        if(node->right) dfs(node->right, prev, count);
+        dfs(node->left, prev, count);
+        dfs(node->right, prev, count);
     }
 };
