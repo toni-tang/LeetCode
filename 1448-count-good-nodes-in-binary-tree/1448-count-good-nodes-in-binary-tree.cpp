@@ -13,23 +13,15 @@ class Solution {
 public:
     int goodNodes(TreeNode* root) {
         int res = 0;
-        dfs(root, NULL, res);
+        dfs(root, root, res);
         return res;
     }
 private:
     void dfs(TreeNode* node, TreeNode* prev, int& count) {
-        if(!prev) {
-            count++;
+        if(node && prev && node->val >= prev->val) {
             prev = node;
+            count++;
         }
-        else
-        { 
-            if(node && prev && node->val >= prev->val) {
-                prev = node;
-                count++;
-            }
-        }
-        
         if(node->left) dfs(node->left, prev, count);
         if(node->right) dfs(node->right, prev, count);
     }
