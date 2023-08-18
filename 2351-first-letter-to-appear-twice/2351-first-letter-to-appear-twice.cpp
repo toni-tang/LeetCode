@@ -1,11 +1,12 @@
 class Solution {
 public:
     char repeatedCharacter(string s) {
-        unordered_map<char, int> mp;
+        vector<bool> vec(26, false);
         for(auto c : s) {
-            mp[c]++;
-            if(mp[c] == 2) return c;
+            if(vec[c - 'a'] == true) return c;
+            vec[c - 'a'] = true;
         }
+        
         return 'a';
     }
 };
