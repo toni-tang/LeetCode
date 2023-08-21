@@ -8,11 +8,11 @@ public:
             dp[i+1] = max(dp[i-1] + nums[i], dp[i]);    
         }
         
-        for(int n : dp) {
-            cout << n << " ";
-        }
+//         for(int n : dp) {
+//             cout << n << " ";
+//         }
         
-        cout << endl;
+//         cout << endl;
         
         return dp[nums.size()];
     }
