@@ -3,7 +3,6 @@ public:
     string ans = "";
     void expand(string &s , int left ,int right, int& res)
     {
-        
         while(left >= 0 && right < s.size())
         {
             if(s[left] != s[right])
