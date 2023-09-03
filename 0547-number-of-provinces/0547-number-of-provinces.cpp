@@ -20,17 +20,16 @@ public:
                 if(i != j && isConnected[i-1][j-1] == 1) {
                     int y = find(j);
                     if(x != y) {
-                        cout << parent[y] << " " << x << endl;
                         parent[y] = x;
                     }
                 }
             }
         }
         
-            for(int i = 1; i <= n; i++) {
-                 if(i == find(i)) res++;
-            }    
-        
+        for(int i = 1; i <= n; i++) {
+             if(i == find(i)) res++;
+        }    
+
         return res;
     }
 };
