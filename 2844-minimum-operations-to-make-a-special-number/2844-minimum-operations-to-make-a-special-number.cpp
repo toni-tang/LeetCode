@@ -12,7 +12,7 @@ private:
     int check(string num, int i) {
         for(int j = i-1; j >= 0; j--) {
             int tmp = ((num[j] - '0') * 10) + (num[i] - '0');
-            if(tmp % 25 == 0) return num.size() - j - 2;
+            if(tmp % 25 == 0) return (num.size() - 1 - i) + (i - j - 1);
         }
         
         return num.size();
