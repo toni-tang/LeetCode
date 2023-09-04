@@ -8,6 +8,10 @@ public:
     int makeConnected(int n, vector<vector<int>>& connections) {
         int m = connections.size();
         
+        if(m < n-1) {
+            return -1;
+        }
+        
         parent.resize(n);
         for(int i = 0; i < n; i++) {
             parent[i] = i;
@@ -30,6 +34,6 @@ public:
             if(i == find(i)) groups++;
         }
         
-        return redundant >= groups-1 ? groups - 1 : -1;
+        return groups - 1;
     }
 };
