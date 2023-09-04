@@ -30,8 +30,6 @@ public:
             if(i == find(i)) groups++;
         }
         
-        cout << redundant << " " << groups << endl;
-        
         return redundant >= groups-1 ? groups - 1 : -1;
     }
 };
