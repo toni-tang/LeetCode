@@ -1,34 +1,26 @@
 class Solution {
 public:
-    vector<int> parent;
-    int find(int x) {
-        return parent[x] == x ? x : find(parent[x]);
+    void dfs(vector<int>& visited, int i, vector<vector<int>>& isConnected) {
+        for(int j = 0; j < isConnected.size(); j++) {
+            if(visited[j] == 0 && isConnected[i][j] == 1 && i != j) {
+                visited[j] = 1;
+                dfs(visited, j, isConnected);
+            }
+        }
     }
     
     int findCircleNum(vector<vector<int>>& isConnected) {
         int n = isConnected.size();
-        
-        parent.resize(n + 1);
-        for(int i = 0; i <= n; i++) {
-            parent[i] = i;
-        }
+        vector<int> visited(n, 0);
         
         int res = 0;
-        for(int i = 1; i <= n; i++) {
-            int x = find(i);
-            for(int j = 1; j <= n; j++) {
-                if(i != j && isConnected[i-1][j-1] == 1) {
-                    int y = find(j);
-                    if(x != y) {
-                        parent[y] = x;
-                    }
-                }
+        for(int i = 0; i < n; i++) {
+            if(visited[i] == 0) {
+                visited[i] = 1;
+                dfs(visited, i, isConnected);
+                res++;
             }
         }
-        
-        for(int i = 1; i <= n; i++) {
-             if(i == find(i)) res++;
-        }    
 
         return res;
     }
