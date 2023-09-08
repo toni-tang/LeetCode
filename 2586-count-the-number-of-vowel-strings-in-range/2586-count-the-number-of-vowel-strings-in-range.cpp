@@ -2,7 +2,6 @@ class Solution {
 public:
     int vowelStrings(vector<string>& words, int left, int right) {
         int res = 0;
-        unordered_map<string, int> mp;
         for(int i = left; i <= right; i++) {
             string word = words[i];
             int n = word.size() - 1;
