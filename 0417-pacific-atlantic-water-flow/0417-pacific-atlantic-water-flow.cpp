@@ -21,13 +21,8 @@ private:
             return false;
         }
         
-        if(i == heights.size()-1 && j >= 0 && j <= heights[0].size()-1) {
-            return true;
-        }
-        
-        if(j == heights[0].size()-1 && i >= 0 && i <= heights.size()-1) {
-            return true;
-        }
+        if(i == heights.size()-1 && j >= 0 && j <= heights[0].size()-1) return true;
+        if(j == heights[0].size()-1 && i >= 0 && i <= heights.size()-1) return true;
         
         int val = heights[i][j];
         heights[i][j] = -1;
@@ -44,13 +39,8 @@ private:
             return false;
         }
         
-        if(i == 0 && j >= 0 && j <= heights[0].size()-1) {
-            return true;
-        }
-        
-        if(j == 0 && i >= 0 && i <= heights.size()-1) {
-            return true;
-        }
+        if(i == 0 && j >= 0 && j <= heights[0].size()-1) return true;
+        if(j == 0 && i >= 0 && i <= heights.size()-1) return true;
         
         int val = heights[i][j];
         heights[i][j] = -1;
