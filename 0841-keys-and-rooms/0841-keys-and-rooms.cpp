@@ -6,7 +6,7 @@ public:
 
         dfs(rooms, 0, visited);
         
-        for(auto visit : visited) {
+        for(const auto& visit : visited) {
             if(!visit) return false;
         }
         
