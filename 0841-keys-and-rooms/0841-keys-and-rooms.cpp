@@ -3,6 +3,7 @@ public:
     bool canVisitAllRooms(vector<vector<int>>& rooms) {
         int n = rooms.size();
         vector<bool> visited(n, false);
+
         dfs(rooms, 0, visited);
         
         for(auto visit : visited) {
