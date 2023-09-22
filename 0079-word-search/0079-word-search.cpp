@@ -22,13 +22,12 @@ public:
         }
         
         if(idx == word.size()-1) return true;
-        
-        char temp = board[i][j];
+    
         board[i][j] = '@';
         
         bool res = dfs(board, word, i+1, j, idx+1) || dfs(board, word, i-1, j, idx+1) || dfs(board, word, i, j+1, idx+1) || dfs(board, word, i, j-1, idx+1);
         
-        board[i][j] = temp;
+        board[i][j] = word[idx];
         
         return res;
     }
