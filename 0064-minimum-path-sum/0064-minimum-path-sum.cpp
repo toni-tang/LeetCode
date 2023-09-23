@@ -20,13 +20,6 @@ public:
             }
         }
         
-        for(int i = 1; i < m+1; i++) {
-            for(int j = 1; j < n+1; j++) {
-                cout << dp[i][j] << " ";
-            }
-            cout << endl;
-        }
-        
         return dp[m][n];
     }
 };
