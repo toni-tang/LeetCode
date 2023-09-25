@@ -1,22 +1,22 @@
 class Solution {
 public:
-    int numSquares(int n) {
-        int res = INT_MAX;
-        int square = round((float)n/2);
-        dfs(n, square, 0, res);
-        return res;
-    }
-
-    void dfs(int n, int square, int count, int& res) {
-        if(n < 0 || square == 0 || count > res) return;
-        if(n == 0) {
-            res = min(res, count);
+    int numSquares(int n) 
+    {
+        if (n <= 0)
+        {
+            return 0;
         }
         
-        if(pow(square, 2) <= n) {
-            dfs(n - pow(square, 2), square, count+1, res);
+        vector<int> cntPerfectSquares(n + 1, INT_MAX);
+        cntPerfectSquares[0] = 0;
+        for (int i = 1; i <= n; i++)
+        {
+            for (int j = 1; j*j <= i; j++)
+            {
+                cntPerfectSquares[i] = min(cntPerfectSquares[i], cntPerfectSquares[i - j*j] + 1);
+            }
         }
         
-        dfs(n, square-1, count, res);
+        return cntPerfectSquares.back();
     }
 };
