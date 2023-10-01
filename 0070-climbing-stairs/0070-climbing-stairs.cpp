@@ -4,7 +4,8 @@ public:
         if(n <= 3) return n;
         
         int a = 1, b = 2, c;
-        while(n-- != 2) {
+        n -= 2;
+        while(n--) {
             c = a + b;
             a = b;
             b = c;
