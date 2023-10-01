@@ -3,14 +3,6 @@ public:
     int minFallingPathSum(vector<vector<int>>& matrix) {
         int res = INT_MAX;
         
-        if(matrix[0].size() == 1) {
-            for(auto n : matrix[0]) {
-                res = min(res, n);
-            }
-            
-            return res;
-        }
-        
         for(int r = 1; r < matrix.size(); r++) {
             for(int c = 0; c < matrix[r].size(); c++) {
                 if(c > 0 && c < matrix[r].size()-1) {
