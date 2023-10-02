@@ -7,12 +7,7 @@ public:
     
     int dfs(vector<int>& nums, int target, int i, int sum, map<pair<int, int>, int>& dp) {
         if(i == nums.size()-1) {
-            int res = 0;
-            
-            if(sum - nums[i] == target) res++;
-            if(sum + nums[i] == target) res++;
-            
-            return res;
+            return (sum - nums[i] == target) + (sum + nums[i] == target);
         } 
         
         if(dp.find({i, sum}) != dp.end()) return dp[{i, sum}];
