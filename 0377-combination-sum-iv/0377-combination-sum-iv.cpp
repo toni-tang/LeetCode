@@ -1,32 +1,19 @@
 class Solution {
 public:
     int combinationSum4(vector<int>& nums, int target) {
-        vector<int> dp(target+1, -1);
+        vector<unsigned int> dp (target+1, 0);
+        dp[0] = 1;
         
-        for(int i = 0 ; i < nums.size(); i++) {
-           dfs(nums, target, dp);
+        for(int i = 1; i <= target; i++) {
+            for(int j = 0; j < nums.size(); j++) {
+                if(i - nums[j] >= 0) {
+                    dp[i] += dp[i - nums[j]]; 
+                }
+            }
         }
         
-        // for(auto n : dp) {
-        //     cout << n << " ";
-        // }
-        // cout << endl;
+        
         
         return dp[target];
-    }
-    
-    int dfs(vector<int>& nums, int target, vector<int>& dp) {
-        if(target < 0) return 0;
-        if(target == 0) return 1;
-        
-        
-        if(dp[target] != -1) return dp[target];
-    
-        int paths = 0;
-        for(int j = 0; j < nums.size(); j++) {
-            paths += dfs(nums, target - nums[j], dp);  
-        }
-        
-        return dp[target] = paths;
     }
 };
