@@ -11,7 +11,7 @@ public:
                 curr[i][0] = 0 ;
                 break;
             }
-            else if(grid[i][0] == 0) {
+            else {
                 curr[i][0] = -1;
             }
         }
@@ -21,7 +21,7 @@ public:
                 curr[0][j] = 0 ;
                 break;
             }
-            else if(grid[0][j] == 0) {
+            else {
                 curr[0][j] = -1;
             }
         }
@@ -30,17 +30,10 @@ public:
             for(int j = 1; j < n; j++) {
                 if(grid[i][j] == 0) {
                     curr[i][j] = curr[i-1][j] + curr[i][j-1];
-                } else if(grid[i][j] == 1) {
+                } else {
                     curr[i][j] = 0;
                 }
             }
-        }
-        
-        for(int i = 0; i < grid.size(); i++) {
-            for(int j = 0; j < grid[i].size(); j++) {
-                cout << curr[i][j] << " ";
-            }
-            cout << endl;
         }
         
         return -curr[m-1][n-1];
