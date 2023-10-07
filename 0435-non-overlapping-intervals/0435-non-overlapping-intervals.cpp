@@ -1,9 +1,8 @@
 class Solution {
 public:
     int eraseOverlapIntervals(vector<vector<int>>& intervals) {
-        // Sort intervals by starting value
-        sort(intervals.begin(), intervals.end());
-        
+        if(intervals.size() == 0) return 0; // Edge case
+        sort(intervals.begin(), intervals.end()); // Sort intervals by starting value
         int res = 0; // Keeps tracks of removals
         int prev = intervals[0][1]; // Keeps track of previous end point;
         
