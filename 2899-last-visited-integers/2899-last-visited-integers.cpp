@@ -4,7 +4,7 @@ public:
         vector<int> res;
         vector<int> vec;
         int prev = 0;
-        for(auto word : words) {
+        for(auto& word : words) {
             if(word != "prev") {
                 prev = 0;
                 vec.push_back(stoi(word));
