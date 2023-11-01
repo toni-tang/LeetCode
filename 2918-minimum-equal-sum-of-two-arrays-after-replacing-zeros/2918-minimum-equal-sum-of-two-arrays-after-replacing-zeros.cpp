@@ -4,12 +4,12 @@ public:
         int zeroOne = 0, zeroTwo = 0;
         long long sumOne = 0, sumTwo = 0;
         
-        for(auto n : nums1) {
+        for(auto& n : nums1) {
             if(n == 0) zeroOne++;
             sumOne += n;
         }
         
-        for(auto n : nums2) {
+        for(auto& n : nums2) {
             if(n == 0) zeroTwo++;
             sumTwo += n;
         }
