@@ -17,12 +17,11 @@ public:
 // Recursive: 
     int maxProfit(vector<int>& prices) {
         int n = prices.size();
-        if(n < 2) return 0; 
         
         int res = 0;
         int prev = prices[0];
         
-        for(int i = 1; i < n; i++) {
+        for(int i = 0; i < n; i++) {
             res = max(res, prices[i] - prev);
             prev = min(prices[i], prev);
         }
