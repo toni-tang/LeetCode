@@ -30,15 +30,30 @@ public:
 //     }
     
 // Tabulation (Bottom- Up):
+//     int rob(vector<int>& nums) {
+//         int n = nums.size();
+//         vector<int> dp(n+1);
+        
+//         dp[1] = nums[0];
+//         for(int i = 1; i < n; i++) {
+//             dp[i+1] = max(dp[i-1] + nums[i], dp[i]);
+//         }
+        
+//         return dp[n];
+//     }
+    
+// Optimized:
     int rob(vector<int>& nums) {
         int n = nums.size();
-        vector<int> dp(n+1);
+        if(n == 0) return 0;
+        int dp1 = 0, dp2 = 0;
         
-        dp[1] = nums[0];
-        for(int i = 1; i < n; i++) {
-            dp[i+1] = max(dp[i-1] + nums[i], dp[i]);
+        for(int i = 0; i < n; i++) {
+            int temp = dp1;
+            dp1 = max(nums[i] + dp2, dp1);
+            dp2 = temp;
         }
         
-        return dp[n];
+        return max(dp1, dp2);
     }
 };
