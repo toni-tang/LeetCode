@@ -49,7 +49,7 @@ public:
     int numDecodings(string s) {
         int n = s.size();
         
-        int curr = 0, pp = 0, p = 1;
+        int curr, pp, p = 1;
         for(int i = n-1; i >= 0; i--) {
             curr = (s[i] == '0') ? 0 : p;
             if(i < s.length()-1 && (s[i] == '1' || (s[i] == '2' && s[i+1] < '7'))) curr += pp;
