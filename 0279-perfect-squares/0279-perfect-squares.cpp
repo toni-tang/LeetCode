@@ -23,7 +23,7 @@ public:
 //     }
     
 // Tabulation:
-        int numSquares(int n) {
+    int numSquares(int n) {
         vector<int> dp(n+1, n);
         
         dp[0] = 0;
