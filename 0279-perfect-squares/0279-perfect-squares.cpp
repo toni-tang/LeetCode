@@ -24,7 +24,6 @@ public:
     
 // Memoization:
         int numSquares(int n) {
-        int res = INT_MAX;
         vector<int> dp(n+1, n);
         
         dp[0] = 0;
