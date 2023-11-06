@@ -29,10 +29,8 @@ public:
         
         dp[0] = 0;
         for(int i = 1; i <= n; i++) {
-            for(int j = 1; j*j <= n; j++) {
-                if( i - j*j == 0 || (i - j*j > 0 && dp[i-j]) ) {
-                    dp[i] = min(dp[i], 1 + dp[i - j*j]);
-                }
+            for(int j = 1; j*j <= i; j++) {
+                dp[i] = min(dp[i], 1 + dp[i - j*j]);
             } 
         } 
         
