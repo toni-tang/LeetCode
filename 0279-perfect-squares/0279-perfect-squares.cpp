@@ -1,22 +1,41 @@
 class Solution {
 public:
-    int numSquares(int n) 
-    {
-        if (n <= 0)
-        {
-            return 0;
-        }
+// Recursive:
+//     int numSquares(int n) {
+//         int res = INT_MAX;
+//         solve(n, 0, res);
+//         return res;
+//     }
+    
+//     void solve(int n, int cnt, int& res) {
+//         if(n == 0) {
+//             res = min(res, cnt);
+//             return;
+//         }
         
-        vector<int> cntPerfectSquares(n + 1, INT_MAX);
-        cntPerfectSquares[0] = 0;
-        for (int i = 1; i <= n; i++)
-        {
-            for (int j = 1; j*j <= i; j++)
-            {
-                cntPerfectSquares[i] = min(cntPerfectSquares[i], cntPerfectSquares[i - j*j] + 1);
-            }
-        }
+//         if(n < 0) return;
         
-        return cntPerfectSquares.back();
+//         for(int i = 1; i <= n; i++) {
+//             solve(n - pow(i, 2), cnt + 1, res);
+//         }
+        
+//         return;
+//     }
+    
+// Memoization:
+        int numSquares(int n) {
+        int res = INT_MAX;
+        vector<int> dp(n+1, n);
+        
+        dp[0] = 0;
+        for(int i = 1; i <= n; i++) {
+            for(int j = 1; j*j <= n; j++) {
+                if( i - j*j == 0 || (i - j*j > 0 && dp[i-j]) ) {
+                    dp[i] = min(dp[i], 1 + dp[i - j*j]);
+                }
+            } 
+        } 
+        
+        return dp[n];
     }
 };
