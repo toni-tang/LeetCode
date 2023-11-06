@@ -22,7 +22,7 @@ public:
 //         return;
 //     }
     
-// Memoization:
+// Tabulation:
         int numSquares(int n) {
         vector<int> dp(n+1, n);
         
