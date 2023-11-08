@@ -19,7 +19,6 @@ public:
                 if(grid[i][j] == 1) res += 1;
             }
         }
-        
         return res;
     }
     
