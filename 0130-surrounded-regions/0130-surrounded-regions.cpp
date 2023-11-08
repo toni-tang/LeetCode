@@ -23,11 +23,10 @@ public:
     }
     
     void dfs(vector<vector<char>>& board, int r, int c) {
-        if(r < 0 || c < 0 || r >= board.size() || c >= board[0].size()) {
+        if(r < 0 || c < 0 || r >= board.size() || c >= board[0].size() || board[r][c] != 'O') {
             return;
         }
         
-        if(board[r][c] != 'O') return;
         if(board[r][c] == 'O') board[r][c] = 'F';
         
         dfs(board, r+1, c);
