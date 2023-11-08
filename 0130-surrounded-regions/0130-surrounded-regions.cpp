@@ -28,7 +28,8 @@ public:
         }
         
         if(board[r][c] != 'O') return;
-        if(board[r][c] == 'O') board[r][c] = 'F';
+        
+        board[r][c] = 'F';
         
         dfs(board, r+1, c);
         dfs(board, r-1, c);
