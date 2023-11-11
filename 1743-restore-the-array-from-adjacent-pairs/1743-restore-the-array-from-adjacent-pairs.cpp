@@ -21,12 +21,7 @@ public:
         while(res.size() < n) {
             int prev = res[res.size()-2], curr = res[res.size()-1];
             vector<int>& pairs = mp[curr];
-            if(pairs[0] == prev) {
-                res.push_back(pairs[1]);
-            }
-            else {
-                res.push_back(pairs[0]);
-            }
+            pairs[0] == prev ? res.push_back(pairs[1]) : res.push_back(pairs[0]);
         }
         
         return res;
