@@ -3,7 +3,6 @@ public:
     vector<int> restoreArray(vector<vector<int>>& adjacentPairs) {
         vector<int> res;
         unordered_map<int, vector<int>> mp;
-        unordered_map<int, int> visited;
         
         int n = adjacentPairs.size() + 1;
         for(vector<int> pair : adjacentPairs) {
@@ -14,26 +13,19 @@ public:
         for(auto [k, v] : mp) {
             if(v.size() == 1) {
                 res.push_back(k);
-                visited[k]++;
-                n--;
-                
-                int adj = v[0];
-                res.push_back(adj);
-                visited[adj]++;
-                n--;
-                
-                while(n) {
-                    for(int i = 0; i < mp[adj].size(); i++) {
-                        if(visited.find(mp[adj][i]) == visited.end()) {
-                            res.push_back(mp[adj][i]);
-                            visited[mp[adj][i]]++;
-                            adj = mp[adj][i];
-                            n--;
-                        }
-                    }
-                }
-                
+                res.push_back(v[0]);
                 break;
+            }
+        }
+        
+        while(res.size() < n) {
+            int prev = res[res.size()-2], curr = res[res.size()-1];
+            vector<int>& pairs = mp[curr];
+            if(pairs[0] == prev) {
+                res.push_back(pairs[1]);
+            }
+            else {
+                res.push_back(pairs[0]);
             }
         }
         
