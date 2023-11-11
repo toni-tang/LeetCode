@@ -3,8 +3,6 @@ public:
     int countHomogenous(string s) {
         if(s.length() == 1) return 1;
         
-        cout << s.length() << endl;
-        
         int res = 0;
         char prev = s[0];
         int L = 0, R = 0;
