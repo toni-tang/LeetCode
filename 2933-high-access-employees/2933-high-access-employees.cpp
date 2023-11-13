@@ -32,6 +32,7 @@ public:
                     break;
                 }
             }
+            cout << endl;
         }
         
         return res;
