@@ -8,7 +8,6 @@ public:
         
         for(int i = 0; i <= n-3; i++) {
             if(mp.find(s[i]) == mp.end()) {
-                mp[s[i]] = unordered_set<char>();
                 for(int j = n-1; j > i; j--) {
                     if(s[i] == s[j]) {
                         for(int k = i + 1; k < j; k++) {
