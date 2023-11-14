@@ -2,25 +2,17 @@ class Solution {
 public:
     int countPalindromicSubsequence(string s) {
         int res = 0;
-        int n = s.size();
+        vector<int> first(26, INT_MAX), last(26, INT_MAX);
         
-        unordered_map<char, unordered_set<char>> mp;
-        
-        for(int i = 0; i <= n-3; i++) {
-            if(mp.find(s[i]) == mp.end()) {
-                for(int j = n-1; j > i; j--) {
-                    if(s[i] == s[j]) {
-                        for(int k = i + 1; k < j; k++) {
-                            mp[s[i]].insert(s[k]);
-                        }
-                        break;
-                    }
-                }
-            }
+        for(int i = 0; i < s.size(); i++) {
+            first[s[i] - 'a']  = min(first[s[i] - 'a'], i);
+            last[s[i] - 'a'] = i;
         }
         
-        for(auto [k, v] : mp) {
-            res += v.size();
+        for(int i = 0; i < 26; i++) {
+            if(first[i] < last[i]) {
+                res += unordered_set<char>(s.begin() + first[i] + 1, s.begin() + last[i]).size();
+            }
         }
         
         return res;
