@@ -26,11 +26,11 @@ public:
                 
                 visited[curr] = 1;
                 
-                for(auto& node : adj[curr]) {
-                    if(color[curr] == color[node]) return false;
+                for(auto& neighbor : adj[curr]) {
+                    if(color[curr] == color[neighbor]) return false;
                     
-                    color[node] = (color[curr] == RED) ? BLUE : RED;
-                    q.push(node);
+                    color[neighbor] = (color[curr] == RED) ? BLUE : RED;
+                    q.push(neighbor);
                 }
             }
         }
