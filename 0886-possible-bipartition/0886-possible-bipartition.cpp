@@ -23,7 +23,6 @@ public:
                 int curr = q.front(); q.pop();
                 
                 if(visited[curr]) continue;
-                
                 visited[curr] = 1;
                 
                 for(auto& neighbor : adj[curr]) {
