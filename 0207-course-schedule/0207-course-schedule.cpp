@@ -12,7 +12,6 @@ public:
         
         queue<int> q;
         for(int i = 0; i < numCourses; i++) {
-            cout << degrees[i] << " ";
             if(degrees[i] == 0) {
                 q.push(i);
                 n--;
