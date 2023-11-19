@@ -1,18 +1,16 @@
 class Solution {
 public:
     int reductionOperations(vector<int>& nums) {
-        map<int, int> mp;
+        sort(nums.begin(), nums.end());
+        int n = nums.size();
         
-        for(auto& n : nums) {
-            mp[n]++;
+        int res = 0;
+        for(int i = n-1; i > 0; --i) {
+            if(nums[i] != nums[i-1]) {
+               res += n - i;
+            }
         }
-        
-        int res = 0, prev = 0;
-        for(auto it = mp.end(); it != mp.begin(); it--) {
-            res += it->second + prev;
-            prev += it->second;
-        }
-        
+    
         return res;
     }
 };
