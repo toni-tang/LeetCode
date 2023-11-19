@@ -1,7 +1,6 @@
 class Solution {
 public:
     int reductionOperations(vector<int>& nums) {
-        sort(nums.begin(), nums.end());
         map<int, int> mp;
         
         for(auto& n : nums) {
