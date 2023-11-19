@@ -13,8 +13,7 @@ public:
         queue<int> q;
         q.push(k);
     
-        int res = 0;
-        int cnt = n;
+        int res = 0, cnt = n;
         while(!q.empty()) {
             int curr = q.front(); q.pop(); cnt--;
             int currDistance = distance[curr];
